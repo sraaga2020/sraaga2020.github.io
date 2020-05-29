@@ -21,7 +21,7 @@
 title: Greybuble
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to Greybuble!
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings

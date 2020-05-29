@@ -1,0 +1,103 @@
+---
+layout: null
+sitemap:
+---
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>GreyBuble By Sahana</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
+
+        <!-- Intro -->
+        <div id="intro">
+            <h1>Welcome To <br>GreyBuble</h1>
+            <p>Hi! Welcome to GreyBuble! I post my blogs, perspectives, and things I find intresting here. I would love
+                for you
+                to check some articles out! Read on and enjoy! </p>
+            <ul class="actions">
+                <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+            </ul>
+        </div>
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">GreyBuble</a>
+        </header>
+        {% include navigation.html %}
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Featured Post -->
+            {% for post in site.posts %}
+            {% if post.featured == true %}
+
+            <article class="post featured">
+                <header class="major">
+                    <span class="date">{{ post.date | date_to_string }}</span>
+                    <h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
+                    <a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}"
+                            alt="" /></a>
+                    <p> {{post.excerpt}}
+                    </p>
+                </header>
+                <ul class="actions">
+                    <li><a href="{{ post.url | absolute_url }}" class="button large">Full Story</a></li>
+                </ul>
+            </article>
+            {% endif %}
+            {% endfor %}
+            <!-- Posts -->
+            <section class="posts">
+                {% for post in site.posts limit:20 %}
+                <article>
+                    <header>
+                        <span class="date">{{ post.date | date_to_string }}</span>
+                        <h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
+                    </header>
+                    <a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}"
+                            alt="" /></a>
+                    <p>{{ post.excerpt }}</p>
+                    <ul class="actions">
+                        <li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
+                    </ul>
+                </article>
+                {% endfor %}
+
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <div class="pagination">
+                    <!--<a href="#" class="previous">Prev</a>-->
+
+                    <a href="#" class="next">Next</a>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
